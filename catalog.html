@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров - TravelShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>TRAVELSHOP</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html" class="active">Все товары</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contact.html">Поддержка</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Поиск товаров...">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <img src="img/иконка поиска.png" alt="Поиск" class="header-icon">
+                        </button>
+                    </div>
+                    <a href="login.html" class="icon-btn login-btn" title="Войти">
+                        <img src="img/иконка1.png" alt="Войти" class="header-icon">
+                    </a>
+                    <button class="icon-btn cart-btn" id="cartBtn">
+                        <img src="img/иконка корзины.png" alt="Корзина" class="header-icon">
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="catalog-banner">
+        <div class="container">
+            <div class="catalog-banner-content">
+                <h1>Каталог товаров</h1>
+                <p>Всё необходимое для вашего идеального путешествия — от чемоданов до палаток</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Главная</a>
+                    <span>/</span>
+                    <span class="breadcrumb-current">Каталог</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="catalog-section">
+        <div class="container">
+            
+            <button class="mobile-filters-toggle" id="mobileFiltersToggle">
+                <span></span> Фильтры
+            </button>
+
+            <div class="catalog-container">
+                
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h2>Фильтры</h2>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Категория</h3>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-backpacks" value="backpacks">
+                            <label for="cat-backpacks">Рюкзаки</label>
+                            <span class="filter-option-count">4</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-tents" value="tents">
+                            <label for="cat-tents">Палатки</label>
+                            <span class="filter-option-count">3</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-sleeping" value="sleeping">
+                            <label for="cat-sleeping">Спальники</label>
+                            <span class="filter-option-count">4</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-shoes" value="shoes">
+                            <label for="cat-shoes">Обувь</label>
+                            <span class="filter-option-count">3</span>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-equipment" value="equipment">
+                            <label for="cat-equipment">Снаряжение</label>
+                            <span class="filter-option-count">9</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Цена, ₽</h3>
+                        <div class="price-inputs">
+                            <div class="price-input-wrapper">
+                                <label>От</label>
+                                <input type="number" id="priceMin" placeholder="0" min="0">
+                            </div>
+                            <div class="price-input-wrapper">
+                                <label>До</label>
+                                <input type="number" id="priceMax" placeholder="10000" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn-apply" id="applyFilters">Применить</button>
+                        <button class="filter-btn-reset" id="resetFilters">Сброс</button>
+                    </div>
+                </aside>
+
+                
+                <div class="catalog-content">
+                    <div class="catalog-header">
+                        <div class="catalog-header-left">
+                            <h2 class="catalog-title">Все товары</h2>
+                            <span class="products-count" id="productsCount">24 товара</span>
+                        </div>
+                        <div class="catalog-header-right">
+                            <div class="view-toggle">
+                                <button class="view-btn active" id="gridViewBtn" title="Сетка">⊞</button>
+                                <button class="view-btn" id="listViewBtn" title="Список">☰</button>
+                            </div>
+                            <div class="sort-wrapper">
+                                <select class="sort-select" id="sortSelect">
+                                    <option value="default">По умолчанию</option>
+                                    <option value="price-asc">Цена: по возрастанию</option>
+                                    <option value="price-desc">Цена: по убыванию</option>
+                                    <option value="name">По названию</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid" id="productsGrid">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">TRAVELSHOP</div>
+                    <p>Ваш надежный партнер в мире путешествий и активного отдыха. Качественное снаряжение для любых приключений.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li><a href="catalog.html">Все товары</a></li>
+                        <li><a href="catalog.html">Рюкзаки</a></li>
+                        <li><a href="catalog.html">Палатки</a></li>
+                        <li><a href="catalog.html">Спальники</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Возврат</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+78001234567">8 (800) 123-45-67</a></li>
+                        <li><a href="mailto:info@travelshop.ru">info@travelshop.ru</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">VKontakte</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><span></span> © 2024 TravelShop. Все права защищены.</p>
+                <p>Сделано с любовью к путешествиям</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Корзина</h2>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="cart-empty">Корзина пуста</p>
+            </div>
+            <div class="cart-total">
+                <p>Итого: <span id="cartTotal">0 ₽</span></p>
+                <button class="btn btn-black" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>
+

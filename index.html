@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelShop - Товары для отдыха и путешествий</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>TRAVELSHOP</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="active">Главная</a></li>
+                        <li><a href="catalog.html">Все товары</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contact.html">Поддержка</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" class="header-search-input" id="headerSearchInput" placeholder="Поиск товаров...">
+                        <button class="icon-btn search-btn" id="searchBtn">
+                            <img src="img/иконка поиска.png" alt="Поиск" class="header-icon">
+                        </button>
+                    </div>
+                    <a href="login.html" class="icon-btn login-btn" title="Войти">
+                        <img src="img/иконка1.png" alt="Войти" class="header-icon">
+                    </a>
+                    <button class="icon-btn cart-btn" id="cartBtn">
+                        <img src="img/иконка корзины.png" alt="Корзина" class="header-icon">
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            
+            <div class="hero-slide active" data-slide="0">
+                <div class="hero-slide-bg">
+                    <img src="img/Баннер-7.jpg" alt="Рюкзак">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Новая коллекция для путешествий уже здесь</h2>
+                            <p class="hero-description">Откройте для себя лучшие товары для активного отдыха и незабываемых приключений. Качество, проверенное временем и путешественниками.</p>
+                            <button class="btn btn-explore" onclick="window.location.href='catalog.html'">Исследовать каталог</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="hero-slide" data-slide="1">
+                <div class="hero-slide-bg">
+                    <img src="img/Баннер-1.jpg" alt="Палатка">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Снаряжение для любых погодных условий</h2>
+                            <p class="hero-description">От солнечных дней до холодных ночей - наше снаряжение готово к любым испытаниям. Проверено в экстремальных условиях профессионалами.</p>
+                            <button class="btn btn-explore" onclick="window.location.href='catalog.html'">Смотреть каталог</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="hero-slide" data-slide="2">
+                <div class="hero-slide-bg">
+                    <img src="img/Баннер-6.jpg" alt="Снаряжение">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2 class="hero-title">Специальные предложения этой недели</h2>
+                            <p class="hero-description">Скидки до 30% на избранные товары. Не упустите шанс приобрести качественное снаряжение по выгодной цене. Предложение ограничено!</p>
+                            <button class="btn btn-explore" onclick="window.location.href='catalog.html'">Посмотреть акции</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <button class="slider-btn slider-prev" id="sliderPrev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-btn slider-next" id="sliderNext">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        
+        <div class="hero-pagination">
+            <span class="pagination-dot active" data-slide="0"></span>
+            <span class="pagination-dot" data-slide="1"></span>
+            <span class="pagination-dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    
+    <section class="shop-categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Магазин наших последних предложений и категорий</h2>
+            <p class="section-subtitle">Откройте для себя широкий ассортимент качественного снаряжения для любых видов активного отдыха и путешествий.</p>
+            <div class="categories-grid">
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/рюкзак.jpg" alt="Рюкзаки">
+                    </div>
+                    <div class="category-info">
+                        <h3>Рюкзаки</h3>
+                        <p>Идеальное решение для путешествий</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/палатка.jpg" alt="Палатки">
+                    </div>
+                    <div class="category-info">
+                        <h3>Палатки</h3>
+                        <p>Усильте свой комфорт</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/спальник.jpg" alt="Спальники">
+                    </div>
+                    <div class="category-info">
+                        <h3>Спальники</h3>
+                        <p>Не только стильно</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/ботинки.jpg" alt="Обувь">
+                    </div>
+                    <div class="category-info">
+                        <h3>Обувь</h3>
+                        <p>Ваша повседневная жизнь</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/лампа.jpg" alt="Фонари">
+                    </div>
+                    <div class="category-info">
+                        <h3>Фонари</h3>
+                        <p>Освещение в темноте</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/Экипировка.jpg" alt="Экипировка">
+                    </div>
+                    <div class="category-info">
+                        <h3>GPS-навигаторы</h3>
+                        <p>Найдите свой путь</p>
+                    </div>
+                </div>
+                <div class="category-card-large">
+                    <div class="category-image">
+                        <img src="img/ко.jpg" alt="Компасы">
+                    </div>
+                    <div class="category-info">
+                        <h3>Компасы</h3>
+                        <p>Ориентируйтесь правильно</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="best-sellers" id="products">
+        <div class="container">
+            <h2 class="section-title">Экономьте на наших самых продаваемых товарах.</h2>
+            <p class="section-subtitle">Наша новая ограниченная коллекция для зимних приключений.</p>
+            <div class="products-row">
+                <a href="product.html?id=1" class="product-card-minimal" data-product-id="1">
+                    <div class="product-image-minimal">
+                        <img src="img/рюкзак.jpg" alt="Рюкзак туристический 50л">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Рюкзак туристический 50л</h3>
+                        <p class="product-description-minimal">Вместительный и удобный рюкзак для длительных походов и путешествий.</p>
+                        <p class="product-price-minimal">4 990 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=2" class="product-card-minimal" data-product-id="2">
+                    <div class="product-image-minimal">
+                        <img src="img/палатка.jpg" alt="Палатка 3-местная">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Палатка 3-местная</h3>
+                        <p class="product-description-minimal">Легкая и прочная палатка для комфортного кемпинга.</p>
+                        <p class="product-price-minimal">8 490 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=3" class="product-card-minimal" data-product-id="3">
+                    <div class="product-image-minimal">
+                        <img src="img/спальник.jpg" alt="Спальник -5°C">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Спальник -5°C</h3>
+                        <p class="product-description-minimal">Теплый и компактный спальник для прохладных ночей.</p>
+                        <p class="product-price-minimal">3 290 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=4" class="product-card-minimal" data-product-id="4">
+                    <div class="product-image-minimal">
+                        <img src="img/ботинки.jpg" alt="Треккинговые ботинки">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Треккинговые ботинки</h3>
+                        <p class="product-description-minimal">Удобные и надежные ботинки для горных походов.</p>
+                        <p class="product-price-minimal">6 990 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=5" class="product-card-minimal" data-product-id="5">
+                    <div class="product-image-minimal">
+                        <img src="img/лампа.jpg" alt="LED фонарь">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Фонарь</h3>
+                        <p class="product-description-minimal">Мощный и долговечный фонарь для ночных походов.</p>
+                        <p class="product-price-minimal">1 990 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=6" class="product-card-minimal" data-product-id="6">
+                    <div class="product-image-minimal">
+                        <img src="img/Экипировка.jpg" alt="Экипировка">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Экипировка</h3>
+                        <p class="product-description-minimal">Экипировка в горы.</p>
+                        <p class="product-price-minimal">15 490 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=7" class="product-card-minimal" data-product-id="7">
+                    <div class="product-image-minimal">
+                        <img src="img/Коврик.jpg" alt="Коврик для сна">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Коврик для сна</h3>
+                        <p class="product-description-minimal">Теплоизоляционный коврик для комфортного отдыха.</p>
+                        <p class="product-price-minimal">2 290 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=8" class="product-card-minimal" data-product-id="8">
+                    <div class="product-image-minimal">
+                        <img src="img/Чай в горах.jpg" alt="Термос 1л">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Термос 1л</h3>
+                        <p class="product-description-minimal">Держит тепло до 24 часов для горячих напитков.</p>
+                        <p class="product-price-minimal">1 790 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=9" class="product-card-minimal" data-product-id="9">
+                    <div class="product-image-minimal">
+                        <img src="img/Перчатки.jpg" alt="Теплые перчатки">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Теплые перчатки</h3>
+                        <p class="product-description-minimal">Водонепроницаемые перчатки для холодной погоды.</p>
+                        <p class="product-price-minimal">990 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+                <a href="product.html?id=10" class="product-card-minimal" data-product-id="10">
+                    <div class="product-image-minimal">
+                        <img src="img/Аптечка.jpg" alt="Походная аптечка">
+                    </div>
+                    <div class="product-info-minimal">
+                        <h3 class="product-name-minimal">Походная аптечка</h3>
+                        <p class="product-description-minimal">Комплект первой помощи для экстренных ситуаций.</p>
+                        <p class="product-price-minimal">1 490 ₽</p>
+                        <button class="btn btn-add-cart" onclick="event.preventDefault(); event.stopPropagation();">В корзину</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="best-around">
+        <div class="container">
+            <h2 class="section-title">Посмотрите лучшее здесь</h2>
+            <p class="section-subtitle">Наша новая ограниченная коллекция для зимних приключений.</p>
+            <div class="best-around-grid">
+                <div class="best-card">
+                    <div class="best-card-image">
+                        <img src="img/Экипировка2.jpg" alt="Комплект снаряжения">
+                    </div>
+                    <div class="best-card-info">
+                        <p class="best-card-label">Комплект снаряжения</p>
+                        <h3>Последние и лучшие</h3>
+                        <button class="btn btn-explore">Исследовать</button>
+                    </div>
+                </div>
+                <div class="best-card">
+                    <div class="best-card-image">
+                        <img src="img/Экипировка3.jpg" alt="Хит продаж">
+                        <span class="best-badge">Хит продаж</span>
+                    </div>
+                    <div class="best-card-info">
+                        <p class="best-card-label">Комплект снаряжения</p>
+                        <h3>Хит продаж</h3>
+                        <button class="btn btn-explore">Исследовать</button>
+                    </div>
+                </div>
+                <div class="best-card">
+                    <div class="best-card-image">
+                        <img src="img/Экипировка лыжная.jpg" alt="Каждый товар">
+                    </div>
+                    <div class="best-card-info">
+                        <p class="best-card-label">Комплект снаряжения</p>
+                        <h3>Каждый товар</h3>
+                        <button class="btn btn-explore">Исследовать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="ideas-section">
+        <div class="container">
+            <h2 class="section-title">Идеи находят место здесь</h2>
+            <p class="section-subtitle">Наша новая ограниченная коллекция для зимних приключений.</p>
+            <div class="ideas-content">
+                <div class="ideas-image">
+                    <img src="img/Без названия (31).jpg" alt="Путеводитель">
+                </div>
+                <div class="ideas-list">
+                    <a href="#" class="idea-item">
+                        <h3>Мы делаем поиск лучшего туристического снаряжения проще...</h3>
+                    </a>
+                    <a href="#" class="idea-item">
+                        <h3>Справочник по планированию путешествий для международных поездок...</h3>
+                    </a>
+                    <a href="#" class="idea-item">
+                        <h3>Лучшие секреты опытных путешественников</h3>
+                    </a>
+                    <a href="#" class="idea-item">
+                        <h3>Мы делаем поиск лучшего туристического снаряжения проще...</h3>
+                    </a>
+                    <a href="#" class="idea-see-all">
+                        Смотреть все <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="search-section">
+        <div class="container">
+            <h2 class="section-title">Ищете что-то еще?</h2>
+            <div class="search-box-wrapper">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск по ключевому слову" class="search-input" id="mainSearchInput">
+                    <button class="search-icon-btn" id="mainSearchBtn">🔍</button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            <div class="search-tags">
+                <button class="tag" data-search="Рюкзак">Рюкзак</button>
+                <button class="tag" data-search="Палатка">Палатка</button>
+                <button class="tag" data-search="Подарок">Подарок</button>
+                <button class="tag" data-search="Спальник">Спальник</button>
+                <button class="tag" data-search="Фонарь">Фонарь</button>
+                <button class="tag" data-search="GPS">GPS</button>
+                <button class="tag" data-search="Ботинки">Ботинки</button>
+                <button class="tag" data-search="Обувь">Обувь</button>
+                <button class="tag" data-search="Снаряжение">Снаряжение</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2 class="newsletter-title">Никогда не пропускайте новинки</h2>
+                    <p class="newsletter-description">Подпишитесь на рассылку, чтобы получать уведомления о наших лучших предложениях на идеальные подарки.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Ваш email" class="newsletter-input">
+                        <button class="btn btn-black">Подписаться</button>
+                    </div>
+                </div>
+                <div class="newsletter-image">
+                    <img src="img/Без названия (13).jpg" alt="Новинки">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">TRAVELSHOP</div>
+                    <p>Ваш надежный партнер в мире путешествий и активного отдыха. Качественное снаряжение для любых приключений.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Каталог</h4>
+                    <ul>
+                        <li><a href="catalog.html">Все товары</a></li>
+                        <li><a href="catalog.html">Рюкзаки</a></li>
+                        <li><a href="catalog.html">Палатки</a></li>
+                        <li><a href="catalog.html">Спальники</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">Возврат</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+78001234567">8 (800) 123-45-67</a></li>
+                        <li><a href="mailto:info@travelshop.ru">info@travelshop.ru</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Мы в соцсетях</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">VKontakte</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><span></span> © 2024 TravelShop. Все права защищены.</p>
+                <p>Сделано с любовью к путешествиям</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Корзина</h2>
+                <button class="cart-close" id="cartClose">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <p class="cart-empty">Корзина пуста</p>
+            </div>
+            <div class="cart-total">
+                <p>Итого: <span id="cartTotal">0 ₽</span></p>
+                <button class="btn btn-black" id="checkoutBtn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
